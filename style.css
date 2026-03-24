@@ -1,0 +1,162 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 5%;
+    background:rgb(255, 255, 255);
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-section img{
+    width:45px;
+}
+
+.logo-section span{
+    font-weight:bold;
+    color:#2b6cb0;
+}
+
+/* MENU */
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+}
+
+.menu a:hover{
+    color:#2b6cb0;
+}
+
+/* BUTTONS */
+.btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.login{
+    background:#2b6cb0;
+    color:white;
+}
+
+.register{
+    background:linear-gradient(45deg,#d4af37,#f6e27a);
+    color:black;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(135deg,#2b6cb0,#1a365d);
+    color:white;
+    padding-top:80px;
+}
+
+.hero h1{
+    font-size:3rem;
+    font-weight:bold;
+}
+
+/* TEACHERS */
+.teachers{
+    padding:50px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:20px;
+}
+
+.card{
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100px;
+    border-radius:50%;
+}
+
+/* GRADIENT TEXT */
+.gradient-text{
+    background:linear-gradient(45deg,#ffd700,#f6e27a);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.sub-text{
+    margin-top:15px;
+    font-size:18px;
+}
+
+/* BUTTONS */
+.hero-buttons{
+    margin-top:25px;
+}
+
+.main-btn{
+    background:linear-gradient(45deg,#2b6cb0,#63b3ed);
+    color:white;
+    margin:10px;
+}
+
+.secondary-btn{
+    background:linear-gradient(45deg,#ffd700,#f6e27a);
+    color:black;
+    margin:10px;
+}
+
+/* STUDY SECTION */
+.study-section{
+    padding:80px 20px;
+    text-align:center;
+}
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+/* NEW BOX */
+.teacher-box{
+    text-align:center;
+}

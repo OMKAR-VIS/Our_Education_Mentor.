@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses - Our Education Mentor</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/course.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo-section">
+        <img src="image/OUR_EDUCATION_MENTOR'S_png.png" alt="logo">
+        <span>OUR EDUCATION MENTOR</span>
+    </div>
+
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="course.htm">Course</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div class="nav-btns">
+        <button class="btn login">Login</button>
+        <button class="btn register">Register</button>
+    </div>
+</nav>
+
+
+<!-- COURSE SECTION -->
+<section class="course-section">
+    <section class="course-section">
+
+<h1 class="title">Select Your Course</h1>
+
+<div class="course-cards">
+
+<h1>Select Your Course</h1>
+
+<div class="course-cards">
+
+    <div class="course-card english" onclick="loadCourse('english')">
+        <i class="fas fa-book-open"></i>
+        <h3>English</h3>
+    </div>
+
+    <div class="course-card spoken" onclick="loadCourse('spoken')">
+        <i class="fas fa-microphone"></i>
+        <h3>English Spoken</h3>
+    </div>
+
+    <div class="course-card science" onclick="loadCourse('science')">
+        <i class="fas fa-flask"></i>
+        <h3>Science</h3>
+    </div>
+
+    <div class="course-card math" onclick="loadCourse('math')">
+        <i class="fas fa-calculator"></i>
+        <h3>Mathematics</h3>
+    </div>
+
+    <div class="course-card hindi" onclick="loadCourse('hindi')">
+        <i class="fas fa-language"></i>
+        <h3>Hindi</h3>
+    </div>
+
+    <div class="course-card social" onclick="loadCourse('social')">
+        <i class="fas fa-globe-asia"></i>
+        <h3>Social Science</h3>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("YOUR_PUBLIC_KEY");
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        name: document.querySelector("input[type='text']").value,
+        email: document.querySelector("input[type='email']").value,
+        message: document.querySelector("textarea").value
+    })
+    .then(function(response) {
+        alert("✅ Message sent successfully!");
+    }, function(error) {
+        alert("❌ Failed to send message");
+    });
+});
+</script>
+
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="video-section">
+
+<div class="video-player">
+    <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="video-list" id="videoList"></div>
+
+</section>
+
+<script src="js/course.js"></script>
+
+</body>
+</html>

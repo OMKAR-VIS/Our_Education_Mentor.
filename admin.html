@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - EduPortal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .sidebar { background: linear-gradient(180deg, #667eea 0%, #764ba2 100%); height: 100vh; position: fixed; width: 250px; }
+        .sidebar a { color: white; padding: 15px; display: block; text-decoration: none; }
+        .sidebar a:hover { background: rgba(255,255,255,0.2); }
+        .content { margin-left: 250px; padding: 20px; }
+        .stat-card { border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="p-4 text-white">
+            <h4><i class="fas fa-crown me-2"></i>Admin Panel</h4>
+        </div>
+        <a href="#dashboard"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+        <a href="#upload"><i class="fas fa-upload me-2"></i>Upload Content</a>
+        <a href="#tests"><i class="fas fa-clipboard-list me-2"></i>Manage Tests</a>
+        <a href="#students"><i class="fas fa-users me-2"></i>Students</a>
+        <a href="#messages"><i class="fas fa-envelope me-2"></i>Messages</a>
+        <a href="#" onclick="logout()" class="mt-auto"><i class="fas fa-sign-out-alt me-2"></i>Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Check Admin Login -->
+        <div id="adminCheck" style="display:none;">
+            <div class="alert alert-danger">
+                <h4><i class="fas fa-exclamation-triangle"></i> Admin Access Required!</h4>
+                <a href="login.html" class="btn btn-danger">Go to Login</a>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard">
+            <h2><i class="fas fa-tachometer-alt text-primary"></i> Admin Dashboard</h2>
+            
+            <!-- Stats Cards -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card stat-card text-center bg-primary text-white">
+                        <div class="card-body">
+                            <i class="fas fa-users fa-2x mb-2"></i>
+                            <h3>125</h3>
+                            <p>Total Students</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card text-center bg-success text-white">
+                        <div class="card-body">
+                            <i class="fas fa-file-pdf fa-2x mb-2"></i>
+                            <h3>23</h3>
+                            <p>PDFs Uploaded</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card text-center bg-warning text-white">
+                        <div class="card-body">
+                            <i class="fas fa-video fa-2x mb-2"></i>
+                            <h3>15</h3>
+                            <p>Videos Added</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card stat-card text-center bg-info text-white">
+                        <div class="card-body">
+                            <i class="fas fa-chart-line fa-2x mb-2"></i>
+                            <h3>89%</h3>
+                            <p>Avg Score</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="row" id="upload">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            <h5><i class="fas fa-file-upload"></i> Upload PDF</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="pdfForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Title</label>
+                                    <input type="text" class="form-control" placeholder="Enter PDF title">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Select PDF</label>
+                                    <input type="file" class="form-control" accept=".pdf" required>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">
+                                    <i class="fas fa-upload"></i> Upload PDF
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header bg-danger text-white">
+                            <h5><i class="fas fa-video"></i> Add YouTube Video</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="videoForm">
+                                <div class="mb-3">
+                                    <label class="form-label">Video Title</label>
+                                    <input type="text" class="form-control" placeholder="Enter video title">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">YouTube URL</label>
+                                    <input type="url" class="form-control" placeholder="https://youtube.com/watch?v=...">
+                                </div>
+                                <button type="submit" class="btn btn-danger w-100">
+                                    <i class="fas fa-plus"></i> Add Video
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Students Table -->
+        <div id="students" class="mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-users"></i> Students List</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Tests Taken</th>
+                                    <th>Average Score</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>001</td>
+                                    <td>Rahul Sharma</td>
+                                    <td>rahul@test.com</td>
+                                    <td>8</td>
+                                    <td>92%</td>
+                                    <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>002</td>
+                                    <td>Priya Singh</td>
+                                    <td>priya@test.com</td>
+                                    <td>5</td>
+                                    <td>78%</td>
+                                    <td><button class="btn btn-sm btn-outline-primary">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Students Table Update -->
+<script>
+function loadUsers() {
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const tbody = document.querySelector('tbody');
+    tbody.innerHTML = '';
+    
+    users.filter(u => u.role === 'user').forEach(user => {
+        tbody.innerHTML += `
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.testsTaken || 0}</td>
+                <td>${user.avgScore || 0}%</td>
+                <td><button class="btn btn-sm btn-danger" onclick="deleteUser(${user.id})">Delete</button></td>
+            </tr>
+        `;
+    });
+}
+
+function deleteUser(id) {
+    if (confirm('Delete this user?')) {
+        let users = JSON.parse(localStorage.getItem('users') || '[]');
+        users = users.filter(u => u.id != id);
+        localStorage.setItem('users', JSON.stringify(users));
+        loadUsers();
+    }
+}
+
+// Load on page load
+loadUsers();
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Admin Login Check
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user || user.role !== 'admin') {
+            document.getElementById('adminCheck').style.display = 'block';
+            document.querySelector('.content').innerHTML = '';
+        } else {
+            document.getElementById('adminCheck').style.display = 'none';
+        }
+
+        // Form Submissions (Demo)
+        document.getElementById('pdfForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('✅ PDF Uploaded Successfully!');
+        });
+
+        document.getElementById('videoForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('✅ Video Added Successfully!');
+        });
+
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
