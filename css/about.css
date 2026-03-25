@@ -1,0 +1,155 @@
+body {
+    background:linear-gradient(135deg,#2b6cb0,#1a365d);
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: white;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 22px;
+    color: #2b6cb0;
+}
+
+.menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.menu a:hover {
+    color: #2b6cb0;
+}
+
+/* Hero */
+.about-hero {
+    margin-top: 100px;
+}
+
+.about-hero h1 {
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+}
+
+.about-hero h1 span {
+    background: linear-gradient(45deg,#ffd700,#f6e27a);
+    -webkit-background-clip:text;
+    color: transparent;
+}
+
+.Jbs {
+    font-size: 16px;
+    color: #ffd700;
+}
+
+/* Text */
+.about-hero p {
+    margin: 15px 0;
+    color: #ffffff;
+}
+
+.about-list li {
+    color: #fff;
+}
+
+/* Goal */
+.goal {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* Search */
+.search-box {
+    display: flex;
+    margin-top: 20px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #ddd;
+}
+
+.search-box button {
+    background: linear-gradient(45deg, #2b6cb0, #ffd700);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Image */
+.image-box {
+    position: relative;
+}
+
+.image-box img {
+    width: 80%;
+    border-radius: 15px;
+}
+
+.info-box {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    background: linear-gradient(45deg, #2b6cb0, #ffd700);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Teachers */
+.teachers-section {
+    padding: 50px;
+}
+
+.cards {
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.teacher-box {
+    text-align:center;
+}
+
+/* FIXED CARD */
+.teacher-card {
+    width:250px;
+    height:260px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+    background:#fff;
+}
+
+.teacher-card:hover {
+    transform:translateY(-10px);
+}
+
+.teacher-card img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* TEXT */
+.teacher-box h3 {
+    margin-top:10px;
+    color:#fff;
+}
+
+.teacher-box p {
+    color:#ffd700;
+}

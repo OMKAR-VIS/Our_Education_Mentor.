@@ -1,0 +1,61 @@
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(255,255,255,0.95);
+    padding: 15px 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: #667eea;
+}
+
+/* Login Card */
+.login-card {
+    margin-top: 80px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* Button */
+.btn-login {
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    border: none;
+    font-weight: bold;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+}

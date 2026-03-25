@@ -1,0 +1,36 @@
+body {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-card {
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+}
+
+.register-icon {
+    font-size: 50px;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.input-style {
+    border-radius: 50px;
+    padding: 12px;
+}
+
+.btn-style {
+    padding: 12px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btn-style:hover {
+    background-color: #218838;
+}
